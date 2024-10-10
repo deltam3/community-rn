@@ -1,14 +1,18 @@
-import '../global.css';
+import { Stack } from 'expo-router';
+import { setStatusBarStyle } from 'expo-status-bar';
+import { useEffect } from 'react';
 
-import { Redirect, Stack } from 'expo-router';
-import GreetScreen from './onboard/index';
-import HomeScreen from './homescreen';
+export default function RootLayout() {
+  useEffect(() => {
+    setTimeout(() => {
+      setStatusBarStyle('light');
+    }, 0);
+  }, []);
 
-export default function Layout() {
   return (
     <Stack>
-      <Stack.Screen name="onboard" options={{ headerShown: false }} />
-      <Stack.Screen name="homescreen" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="+not-found" />
     </Stack>
   );
 }

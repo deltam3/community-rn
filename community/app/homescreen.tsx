@@ -10,7 +10,7 @@ const HomeScreen = () => {
       console.error(`Errror clearonboarding ${err}`);
     }
   };
-  const textme = '';
+  // const textme = '';
   useEffect(() => {
     clearOnboarding();
   }, []);
